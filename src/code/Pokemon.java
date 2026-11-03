@@ -3,11 +3,11 @@ import java.util.Locale;
 
 // Immutable data object. Raw height is in decimeters; weight is in hectograms.
 public class Pokemon {
-    private final int id;
-    private final String name;
-    private final int heightDm;
-    private final int weightHg;
-    private final int baseExperience;
+    private int id;
+    private String name;
+    private int heightDm;
+    private int weightHg;
+    private int baseExperience;
 
     public Pokemon(int id, String name, int heightDm, int weightHg, int baseExperience) {
         this.id = id;
