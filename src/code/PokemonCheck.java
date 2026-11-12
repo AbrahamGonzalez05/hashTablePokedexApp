@@ -2,14 +2,14 @@ package code;
 
 public class PokemonCheck {
     public static void main(String[] args){
-        Pokemon p1 = new Pokemon(25. "Pikachu", 4, 60, 112);
+        Pokemon p1 = new Pokemon(25, "Pikachu", 4, 60, 112);
 
-        Pokemon p2 = new Pokemon(25. "Pikachu", 4, 60, 112);
+        Pokemon p2 = new Pokemon(25, "Pikachu", 4, 60, 112);
 
         System.out.println("=== Equality Test ===");
         System.out.println("p1.equals(p2): " + p1.equals(p2));
 
-        System.outprintln("p1 hashCode: " + p1.hashCode());
+        System.out.println("p1 hashCode: " + p1.hashCode());
 
         System.out.println("p2 hashCode: "
                 + p2.hashCode());
