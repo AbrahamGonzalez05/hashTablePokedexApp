@@ -85,7 +85,7 @@ public class Pokemon {
         if (this == obj){
             return true;
         }
-        if (obj == null || get class() != obj.getClass()){
+        if (obj == null || getCass() != obj.getClass()){
             return false;
         }
 
