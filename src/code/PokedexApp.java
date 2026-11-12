@@ -37,18 +37,87 @@ public class PokedexApp {
     }
 
     private static void searchPokemon(Scanner input) {
-        // TODO 1: Complete this menu action.
-        System.out.println("TODO: complete this action");
+        System.out.println("Pokemon name: ");
+
+        String name = PokemonLoader.normalizeName(input.nextLine());
+
+        Pokemon pokemon = pokedex.get(name);
+
+        if (pokemon == null){
+            System.out.println("Pokemon not found.");
+        } else {
+            System.out.println(pokemon);
+        }
     }
 
     private static void addOrUpdatePokemon(Scanner input) {
-        // TODO 2: Complete this menu action.
-        System.out.println("TODO: complete this action");
+
+        System.out.println("Pokemon name: ");
+
+        String name =
+            PokemonLoader.normalizeName(
+                    input.nextLine());
+
+        if (name.isEmpty()) {
+            System.out.println(
+                    "Name cannot be blank.");
+            return;
+        }
+
+        boolean exists =
+                pokedex.get(name) != null;
+
+        int id =
+                readNonNegativeInt(
+                        input,
+                        "ID: ");
+
+        int heightDm =
+                readNonNegativeInt(
+                        input,
+                        "Height (dm): ");
+
+        int weightHg =
+                readNonNegativeInt(
+                        input,
+                        "Weight (hg): ");
+
+        int baseExperience =
+                readNonNegativeInt(
+                        input,
+                        "Base experience: ");
+
+        Pokemon pokemon =
+                new Pokemon(
+                        id,
+                        name,
+                        heightDm,
+                        weightHg,
+                        baseExperience);
+
+        pokedex.insert(name, pokemon);
+
+        if (exists){
+            System.out.println("Pokemon updated.");
+        } else {
+            System.out.println("Pokemon added.");
+        }
+
     }
 
     private static void removePokemon(Scanner input) {
-        // TODO 3: Complete this menu action.
-        System.out.println("TODO: complete this action");
+        
+        System.out.println("Pokemon name: ");
+
+        String name = PokemonLoader.normalizeName(input.nextLine());
+
+        boolean removed = pokedex.remove(name);
+
+        if(removed){
+            System.out.println("Pokemon removed.");
+        } else {
+            System.out.println("Pokemon not found.");
+        }
     }
 
     // Provided: reads a non-negative integer using nextLine(), avoiding leftover newlines.
