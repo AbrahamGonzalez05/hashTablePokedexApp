@@ -17,7 +17,7 @@ public class Pokemon {
         this.baseExperience = baseExperience;
     }
     public int getId() { 
-    	return Id; 
+    	return id; 
     }
 
     public String getName() { 
@@ -29,7 +29,7 @@ public class Pokemon {
     }
 
     public int getWeightHg() { 
-    	return wightHg;; 
+    	return weightHg;
     }
 
     public int getBaseExperience() { 
@@ -81,11 +81,11 @@ public class Pokemon {
     }
 
     @Override
-    public boolean equal(object obj){
+    public boolean equals(Object obj){
         if (this == obj){
             return true;
         }
-        if (obj == null || getCass() != obj.getClass()){
+        if (obj == null || getClass() != obj.getClass()){
             return false;
         }
 
